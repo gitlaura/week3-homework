@@ -1,0 +1,9 @@
+<h2><%= @place.title %></h2>
+
+<p><%= link_to 'Edit', "/places/#{@place.id}/edit" %></p>
+
+<p><%= number_to_currency(@place.price) %></p>
+
+<%= image_tag(@place.photo, height: '300') %>
+
+<p><%= simple_format(@place.description) %></p>

@@ -1,0 +1,11 @@
+<h2>Add a New Attraction</h2>
+
+<p><%= link_to "Cancel", "/" %></p>
+
+<form action="/places/submit_new">
+	<p><b>Title: </b> <%= text_field_tag 'title', nil, size: 50, required: true %></p>
+	<p><b>Photo URL: </b> <%= url_field_tag 'photo', nil, size: 50, required: true %></p>
+	<p><b>Price: </b> <%= number_field_tag 'price', nil, required: true %></p>
+	<p><b>Description: </b></br> <%= text_area_tag 'description', nil, rows: 5, cols: 40 %></p>
+	<%= submit_tag("Add") %>
+</form>

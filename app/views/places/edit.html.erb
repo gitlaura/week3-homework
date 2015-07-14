@@ -1,0 +1,11 @@
+<h2><%= @place.title %></h2>
+
+<p><%= link_to "Cancel", "/places/#{@place.id}" %></p>
+
+<form action="/places/<%=@place.id%>/update">
+	<p><b>Title: </b> <%= text_field_tag 'title', @place.title, size: 50, required: true %></p>
+	<p><b>Photo URL: </b> <%= url_field_tag 'photo', @place.photo, size: 50, required: true %></p>
+	<p><b>Price: </b> <%= number_field_tag 'price', @place.price, required: true %></p>
+	<p><b>Description: </b></br> <%= text_area_tag 'description', @place.description, rows: 10, cols: 60, required: true %></p>
+	<%= submit_tag("Update") %>
+</form>

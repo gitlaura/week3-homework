@@ -1,0 +1,18 @@
+<div>
+	<%= image_tag("http://www.ssn.tv/wp-content/uploads/2014/07/NYC-1.jpg", height: '300') %>
+</div>
+
+<div style="margin-top:15px">
+	<p><%= link_to "Add New Attraction", "/places/new" %></p>
+	<ul>
+		<% @places.each do |place| %>
+		<li>
+			<p>
+				<%= link_to place.title, "/places/#{place.id}" %> 
+				(<%= number_to_currency(place.price) %>)
+				<%= link_to "Delete", "/places/#{place.id}/delete" %>
+			</p>
+		</li>
+		<% end %>
+	</ul>
+</div>
